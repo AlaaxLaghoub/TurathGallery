@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Scorpion
-  - Cactus
-  - SandCluster
-  - Obstacle
-  - Bird
-  - OasisEndZone
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,12 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-<<<<<<< Updated upstream
-  - Dust
-=======
   - 
->>>>>>> Stashed changes
+  - 
   - 
   - 
   - 
@@ -50,15 +40,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BG
-    uniqueID: 1104178169
-    locked: 0
-  - name: Obstacle
-    uniqueID: 4100688821
-    locked: 0
-  - name: Player
-    uniqueID: 229475825
     locked: 0
   m_RenderingLayers:
   - Default
