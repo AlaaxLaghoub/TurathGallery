@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Level 2/Player/buttons_Exit.png.meta
 guid: 19e13ae0065118244831526428eefc15
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3087409416721184742
     second: buttons_Exit_0
+========
+guid: 6f80de4f158175c4b88db3dd92e337c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4905621260123338296
+    second: jump frame-export_0
+>>>>>>>> Stashed changes:Assets/Level 2/Player/jump frame-export.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< Updated upstream:Assets/Level 2/Player/buttons_Exit.png.meta
       name: buttons_Exit_0
+========
+      name: jump frame-export_0
+>>>>>>>> Stashed changes:Assets/Level 2/Player/jump frame-export.png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
+<<<<<<<< Updated upstream:Assets/Level 2/Player/buttons_Exit.png.meta
         width: 282
         height: 110
+========
+        width: 556
+        height: 484
+>>>>>>>> Stashed changes:Assets/Level 2/Player/jump frame-export.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +133,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< Updated upstream:Assets/Level 2/Player/buttons_Exit.png.meta
       spriteID: 6e7bcd7b18ea8da20800000000000000
       internalID: 3087409416721184742
+========
+      spriteID: 83671448b84441440800000000000000
+      internalID: 4905621260123338296
+>>>>>>>> Stashed changes:Assets/Level 2/Player/jump frame-export.png.meta
       vertices: []
       indices: 
       edges: []
@@ -135,7 +158,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< Updated upstream:Assets/Level 2/Player/buttons_Exit.png.meta
       buttons_Exit_0: 3087409416721184742
+========
+      jump frame-export_0: 4905621260123338296
+>>>>>>>> Stashed changes:Assets/Level 2/Player/jump frame-export.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,8 +11,11 @@ public class PlayerRunnerController : MonoBehaviour
     public float runSpeed = 6f;
     public float slowedSpeed = 2.5f;
     public float jumpForce = 12f;
+<<<<<<< Updated upstream
     public ParticleSystem dust;
 
+=======
+>>>>>>> Stashed changes
 
     [Header("Movement Smoothing")]
     public float acceleration = 15f;
@@ -78,7 +81,11 @@ public class PlayerRunnerController : MonoBehaviour
     private BirdManager birdManager;
 
     // Movement
+<<<<<<< Updated upstream
     public float currentSpeed;
+=======
+    private float currentSpeed;
+>>>>>>> Stashed changes
     private bool isGrounded;
     private bool isJumping;
     private bool wasGrounded;
@@ -89,16 +96,24 @@ public class PlayerRunnerController : MonoBehaviour
     private bool jumpInputReleased;
     private bool jumpRequested;
 
+<<<<<<< Updated upstream
     // public ParticleSystem dust;
 
 
+=======
+>>>>>>> Stashed changes
     // Animation
     private string currentAnimationState;
     private bool isFalling;
 
     // Smooth velocity tracking
+<<<<<<< Updated upstream
     public float targetHorizontalSpeed;
     public float currentHorizontalVelocity;
+=======
+    private float targetHorizontalSpeed;
+    private float currentHorizontalVelocity;
+>>>>>>> Stashed changes
 
     // Hurt state
     private bool isHurting = false;
@@ -479,9 +494,12 @@ public class PlayerRunnerController : MonoBehaviour
         if (jumpPressed)
         {
             jumpRequested = true;
+<<<<<<< Updated upstream
 
             dust.Play();
 
+=======
+>>>>>>> Stashed changes
             jumpBufferCounter = jumpBufferTime;
         }
 
@@ -655,6 +673,7 @@ public class PlayerRunnerController : MonoBehaviour
         ChangeAnimationState(idleAnimationName);
     }
 
+<<<<<<< Updated upstream
     public void SlowDown(float slowFactor)
     {
         if (isHurting || IsInvincible) return;
@@ -700,6 +719,14 @@ public class PlayerRunnerController : MonoBehaviour
 
         playerSprite.color = originalColor;
     }
+=======
+    public void SlowDown()
+    {
+        currentSpeed = slowedSpeed;
+        targetHorizontalSpeed = currentSpeed;
+    }
+
+>>>>>>> Stashed changes
     public void ResetPlayer()
     {
         Debug.Log("[RESET] Resetting player");

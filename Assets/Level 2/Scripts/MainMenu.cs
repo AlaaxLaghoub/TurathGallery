@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+<<<<<<< Updated upstream
 using System.Collections;
 
 public class MainMenu : MonoBehaviour
@@ -15,6 +16,15 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(playDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+=======
+public class MainMenu : MonoBehaviour
+{
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+>>>>>>> Stashed changes
     }
 
     public void QuitGame()
@@ -22,4 +32,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exit");
         Application.Quit();
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

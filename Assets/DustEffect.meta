@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/DustEffect.meta
 guid: ec8213b191a5ea948b798dd4360976fa
+========
+guid: 1b078cd164220ab4f911977a3d059997
+>>>>>>>> Stashed changes:Assets/Level 2.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

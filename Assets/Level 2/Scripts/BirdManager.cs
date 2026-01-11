@@ -314,6 +314,7 @@ public class BirdManager : MonoBehaviour
     }
 
     // For debugging
+<<<<<<< Updated upstream
     // void OnGUI()
     // {
     //     if (!Application.isPlaying) return;
@@ -341,6 +342,36 @@ public class BirdManager : MonoBehaviour
     //     GUI.Label(rect, $"Obstacle Hits: {obstacleHits}/{maxHits}", style);
     // }
 
+=======
+    void OnGUI()
+    {
+        if (!Application.isPlaying) return;
+
+        GUIStyle style = new GUIStyle(GUI.skin.label);
+        style.fontSize = 14;
+        style.normal.textColor = Color.white;
+
+        Rect rect = new Rect(10, 220, 350, 30);
+
+        if (hasReachedOasis)
+        {
+            GUI.Label(rect, "Bird Status: AT OASIS", style);
+        }
+        else if (isFlyingAway)
+        {
+            GUI.Label(rect, "Bird Status: FLYING AWAY", style);
+        }
+        else
+        {
+            GUI.Label(rect, "Bird Status: FOLLOWING", style);
+        }
+
+        rect.y += 20;
+        GUI.Label(rect, $"Obstacle Hits: {obstacleHits}/{maxHits}", style);
+    }
+
+    // Add these methods to your BirdManager class:
+>>>>>>> Stashed changes
 
     public void BirdReachOasis()
     {

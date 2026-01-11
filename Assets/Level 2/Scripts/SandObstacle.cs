@@ -1,9 +1,15 @@
+<<<<<<< Updated upstream
 using UnityEngine;
 using System.Collections;
+=======
+// SandObstacle.cs - Attach to sand prefabs
+using UnityEngine;
+>>>>>>> Stashed changes
 
 public class SandObstacle : MonoBehaviour
 {
     [Header("Slow Settings")]
+<<<<<<< Updated upstream
     public float slowFactor = 0.5f; // How much to slow the player (0.5 = 50% speed)
     public float slowDuration = 2f; // How long the slow effect lasts
 
@@ -46,10 +52,20 @@ public class SandObstacle : MonoBehaviour
         }
 
         // Setup collider if needed
+=======
+    public float slowFactor = 0.5f;
+    public float duration = 2f;
+
+    void Start()
+    {
+        gameObject.tag = "SandCluster";
+
+>>>>>>> Stashed changes
         if (GetComponent<Collider2D>() == null)
         {
             BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
             collider.isTrigger = true; // Sand should be a trigger
+<<<<<<< Updated upstream
             // Adjust collider size based on sprite
             if (spriteRenderer != null)
             {
@@ -88,11 +104,14 @@ public class SandObstacle : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = new Vector2(-moveSpeed, 0);
+=======
+>>>>>>> Stashed changes
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+<<<<<<< Updated upstream
         if (other.CompareTag("Player") && !hasHitPlayer)
         {
             Debug.Log("[SAND] Player entered sand obstacle!");
@@ -216,6 +235,12 @@ public class SandObstacle : MonoBehaviour
         {
             Bounds bounds = GetComponent<Collider2D>().bounds;
             Gizmos.DrawWireCube(bounds.center, bounds.size);
+=======
+        if (other.CompareTag("Player"))
+        {
+            // Optional: Visual effect when hit
+            GetComponent<SpriteRenderer>().color = new Color(1f, 0.5f, 0f, 0.5f);
+>>>>>>> Stashed changes
         }
     }
 }
