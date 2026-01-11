@@ -11,6 +11,8 @@ public class PlayerRunnerController : MonoBehaviour
     public float runSpeed = 6f;
     public float slowedSpeed = 2.5f;
     public float jumpForce = 12f;
+    public ParticleSystem dust;
+
 
     [Header("Movement Smoothing")]
     public float acceleration = 15f;
@@ -76,7 +78,7 @@ public class PlayerRunnerController : MonoBehaviour
     private BirdManager birdManager;
 
     // Movement
-    private float currentSpeed;
+    public float currentSpeed;
     private bool isGrounded;
     private bool isJumping;
     private bool wasGrounded;
@@ -87,13 +89,16 @@ public class PlayerRunnerController : MonoBehaviour
     private bool jumpInputReleased;
     private bool jumpRequested;
 
+    // public ParticleSystem dust;
+
+
     // Animation
     private string currentAnimationState;
     private bool isFalling;
 
     // Smooth velocity tracking
-    private float targetHorizontalSpeed;
-    private float currentHorizontalVelocity;
+    public float targetHorizontalSpeed;
+    public float currentHorizontalVelocity;
 
     // Hurt state
     private bool isHurting = false;
@@ -474,6 +479,9 @@ public class PlayerRunnerController : MonoBehaviour
         if (jumpPressed)
         {
             jumpRequested = true;
+
+            dust.Play();
+
             jumpBufferCounter = jumpBufferTime;
         }
 
@@ -647,12 +655,51 @@ public class PlayerRunnerController : MonoBehaviour
         ChangeAnimationState(idleAnimationName);
     }
 
-    public void SlowDown()
+    public void SlowDown(float slowFactor)
     {
-        currentSpeed = slowedSpeed;
+        if (isHurting || IsInvincible) return;
+
+        Debug.Log($"[PLAYER] Slowing down by factor {slowFactor}");
+
+        float originalSpeed = currentSpeed;
+        currentSpeed = runSpeed * slowFactor;
         targetHorizontalSpeed = currentSpeed;
+
+        // Optional: Visual feedback for slow
+        if (playerSprite != null)
+        {
+            StartCoroutine(SlowVisualEffect());
+        }
     }
 
+    // Method 2: Slow down to default slowed speed (for existing code)
+    public void SlowDown()
+    {
+        if (isHurting || IsInvincible) return;
+
+        Debug.Log("[PLAYER] Slowing down to default slowed speed");
+
+        currentSpeed = slowedSpeed;
+        targetHorizontalSpeed = currentSpeed;
+
+        // Optional: Visual feedback for slow
+        if (playerSprite != null)
+        {
+            StartCoroutine(SlowVisualEffect());
+        }
+    }
+
+    private System.Collections.IEnumerator SlowVisualEffect()
+    {
+        if (playerSprite == null) yield break;
+
+        Color originalColor = playerSprite.color;
+        playerSprite.color = new Color(0.5f, 0.5f, 1f, 0.7f); // Blue tint
+
+        yield return new WaitForSeconds(0.3f);
+
+        playerSprite.color = originalColor;
+    }
     public void ResetPlayer()
     {
         Debug.Log("[RESET] Resetting player");
